@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- User will input the temperature -->
+    <div class="input-field">
+        <input type="number" id="input-temperature" required
+            minlength="1" maxlength="4"
+            placeholder="Enter temperature"/>
+    </div>
+
+    <!-- Radio Buttons! -->
+    <div class="radio-buttons">
+        <p>Select conversion:</p>
+        <input type="radio" id="fahrenheit-to-celsius" name="radio-temp" checked/>Fahrenheit to Celsius
+        <br>
+        <input type="radio" id="celsius-to-fahrenheit" name="radio-temp"/>Celsius to Fahrenheit
+    </div>
+
+    <!-- Convert and Clear Buttons -->
+    <div class = "submit-and-clear">      
+        <button type="submit" id="converter">Convert</button>
+        <button id="clear" onclick="document.getElementById('input-temperature').value = ''">Clear</button>
+    </div>
+
+    <div id="the-result"></div>
 
 <script src="main.js"></script>
 </body>
