@@ -4,13 +4,13 @@ let inputValue = document.getElementById('input-temperature');
 // Conversion functions
 function toCelsius() {
     inputValue = document.getElementById('input-temperature').value;
-    let celsius = (inputValue - 32) / 1.8;
+    let celsius = (Math.round((inputValue - 32) / 1.8));
     return celsius;
 }
 
 function toFahrenheit() {
     inputValue = document.getElementById('input-temperature').value;
-    let fahrenheit = (inputValue * 1.8) + 32;
+    let fahrenheit = (Math.round((inputValue * 1.8) + 32));
     return fahrenheit;
 }
 
