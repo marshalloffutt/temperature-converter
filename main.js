@@ -61,3 +61,10 @@ function clearInput() {
 // Event Listeners for the buttons
 button.addEventListener("click", determineConverter);
 clearButton.addEventListener("click", clearInput);
+
+// Event Listener to press return instead of having to click 'convert' button
+addEventListener("keyup", function(e) {
+    if(e.keyCode === 13) {
+        determineConverter();
+    }
+});
