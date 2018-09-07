@@ -1,50 +1,63 @@
 // Define 'value' from the input field 
 let inputValue = document.getElementById('input-temperature');
+// Variable to connect my final output into the DOM
+let finalOutput = document.getElementById("converted-temperature")
 
 // Conversion functions
 function toCelsius() {
-    inputValue = document.getElementById('input-temperature').value;
     let celsius = (Math.round((inputValue - 32) / 1.8));
     return celsius;
 }
 
 function toFahrenheit() {
-    inputValue = document.getElementById('input-temperature').value;
     let fahrenheit = (Math.round((inputValue * 1.8) + 32));
     return fahrenheit;
 }
 
-// Get a reference to the button element in the DOM
+// Get a reference to the button elements in the DOM
 const button = document.getElementById("converter");
+const clearButton = document.getElementById("clear");
 
-// Variable to connect my final output into the DOM
-let finalOutput = document.getElementById("converted-temperature")
+// Change color of answer depending on temperature
+function tempColor(highTemp, lowTemp, inputValue) {
+    if (inputValue >= highTemp) {
+        finalOutput.style.color = "red";
+    } else if (inputValue <= lowTemp) {
+        finalOutput.style.color = "blue";
+    } else {
+        finalOutput.style.color = "green";
+    }
+}
 
 // This function should determine which conversion should
 // happen based on which radio button is selected. And it runs it.
 function determineConverter() {
+    // Validation segment. If there is no input, then we get no conversion. It is placed here so that it "fires off" when the convert button is clicked.
+    if (document.getElementById('input-temperature').value.length == 0) {
+        document.getElementById('validation-message').innerHTML = "Please enter a temperature value";
+        return false;
+    } else {
+        document.getElementById('validation-message').innerHTML = '';
+    }
+    // Where the magic happens.
+    inputValue = document.getElementById('input-temperature').value;
     if (document.getElementById('fahrenheit-to-celsius').checked) {
         theResult = toCelsius();
         finalOutput.innerHTML = inputValue + "° Fahrenheit converted to Celsius is " + theResult + "°.";
-        if (theResult >= 32) {
-            finalOutput.style.color = "red";
-        } else if (theResult <= 0) {
-            finalOutput.style.color = "blue";
-        } else {
-            finalOutput.style.color = "green";
-        }
+        tempColor(90, 32, inputValue);
     } else if (document.getElementById('celsius-to-fahrenheit').checked) {
         theResult = toFahrenheit();
-        finalOutput.innerHTML = inputValue +  "° Celsius converted to Fahrenheit is " + theResult + "°.";
-        if (theResult >= 90) {
-            finalOutput.style.color = "red";
-        } else if (theResult <= 32) {
-            finalOutput.style.color = "blue";
-        } else {
-            finalOutput.style.color = "green";
-        }
+        finalOutput.innerHTML = inputValue + "° Celsius converted to Fahrenheit is " + theResult + "°.";
+        tempColor(32, 0, inputValue);
     }
 }
 
-// Event Listener for the button
+// This function clears out my input-temperature, and output info. 
+function clearInput() {
+    document.getElementById('input-temperature').value = '';
+    finalOutput.innerHTML = '';
+}
+
+// Event Listeners for the buttons
 button.addEventListener("click", determineConverter);
+clearButton.addEventListener("click", clearInput);

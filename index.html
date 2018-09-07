@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Temperature Converter</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- User will input the temperature -->
     <div class="input-field">
-        <input type="number" id="input-temperature" required
-            minlength="1" maxlength="4"
-            placeholder="Enter temperature"/>
+        <input type="number" id="input-temperature" required minlength="1" placeholder="Enter temperature in degrees" />
+    </div>
+
+    <div class="validation">
+        <h3 id="validation-message"></h3>
     </div>
 
     <!-- Radio Buttons! -->
@@ -20,17 +24,18 @@
         <p>Select conversion:</p>
         <input type="radio" id="fahrenheit-to-celsius" name="radio-temp" checked/>Fahrenheit to Celsius
         <br>
-        <input type="radio" id="celsius-to-fahrenheit" name="radio-temp"/>Celsius to Fahrenheit
+        <input type="radio" id="celsius-to-fahrenheit" name="radio-temp" />Celsius to Fahrenheit
     </div>
 
     <!-- Convert and Clear Buttons -->
-    <div class = "submit-and-clear">      
+    <div class="submit-and-reset">
         <button type="submit" id="converter">Convert</button>
-        <button id="clear" onclick="document.getElementById('input-temperature').value = ''">Clear</button>
+        <button type="reset" id="clear">Clear</button>
     </div>
 
-    <h3 id="converted-temperature"></h3>
+    <h2 id="converted-temperature"></h2>
 
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>
