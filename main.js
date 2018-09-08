@@ -1,5 +1,6 @@
 // Define 'value' from the input field 
 let inputValue = document.getElementById('input-temperature');
+
 // Variable to connect my final output into the DOM
 let finalOutput = document.getElementById("converted-temperature")
 
@@ -32,7 +33,8 @@ function tempColor(highTemp, lowTemp, inputValue) {
 // This function should determine which conversion should
 // happen based on which radio button is selected. And it runs it.
 function determineConverter() {
-    // Validation segment. If there is no input, then we get no conversion. It is placed here so that it "fires off" when the convert button is clicked.
+    // Validation segment. If there is no input, then we get no conversion. It is placed here so
+    // that it "fires off" when the convert button is clicked.
     if (document.getElementById('input-temperature').value.length == 0) {
         document.getElementById('validation-message').innerHTML = "Please enter a temperature value";
         return false;
@@ -43,11 +45,11 @@ function determineConverter() {
     inputValue = document.getElementById('input-temperature').value;
     if (document.getElementById('fahrenheit-to-celsius').checked) {
         theResult = toCelsius();
-        finalOutput.innerHTML = inputValue + "° Fahrenheit converted to Celsius is " + theResult + "°.";
+        finalOutput.innerHTML = inputValue + "° F converted to Celsius is " + theResult + "°";
         tempColor(90, 32, inputValue);
     } else if (document.getElementById('celsius-to-fahrenheit').checked) {
         theResult = toFahrenheit();
-        finalOutput.innerHTML = inputValue + "° Celsius converted to Fahrenheit is " + theResult + "°.";
+        finalOutput.innerHTML = inputValue + "° C converted to Fahrenheit is " + theResult + "°";
         tempColor(32, 0, inputValue);
     }
 }
@@ -62,7 +64,8 @@ function clearInput() {
 button.addEventListener("click", determineConverter);
 clearButton.addEventListener("click", clearInput);
 
-// Event Listener to press return instead of having to click 'convert' button
+// Event Listener to press return instead of having to click 'convert' button.
+// e is short way to say 'event'. 13 is the key code for a carriage return.
 addEventListener("keyup", function(e) {
     if(e.keyCode === 13) {
         determineConverter();
