@@ -1,3 +1,46 @@
 body {
-    background-color: rgb(230, 222, 222)
-};
+    background-color: #64A3FF;
+    margin-top: 200px;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+.container {
+    background-color: rgb(253, 251, 246);
+    margin: 0 auto;
+    padding: 20px, 40px, 40px, 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 500px;
+    width: 700px;
+    border-radius: 20px;
+    box-shadow: 5px 10px rgb(49, 49, 47)
+}
+
+.validation {
+    color: red;
+    font-style: italic;
+}
+
+input {
+    width: max-content;
+    font-size: 1.5em;
+    padding: 10px;
+}
+
+.radio-buttons {
+    padding: 10px;
+}
+
+#fahrenheit-to-celsius {
+    margin: 10px;
+}
+
+#converted-temperature {
+    font-size: 2em;
+}
