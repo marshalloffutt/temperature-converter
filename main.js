@@ -33,6 +33,7 @@ function tempColor(highTemp, lowTemp, inputValue) {
 // This function should determine which conversion should
 // happen based on which radio button is selected. And it runs it.
 function determineConverter() {
+
     // Validation segment. If there is no input, then we get no conversion. It is placed here so
     // that it "fires off" when the convert button is clicked.
     if (document.getElementById('input-temperature').value.length == 0) {
@@ -41,6 +42,7 @@ function determineConverter() {
     } else {
         document.getElementById('validation-message').innerHTML = '';
     }
+    
     // Where the magic happens.
     inputValue = document.getElementById('input-temperature').value;
     if (document.getElementById('fahrenheit-to-celsius').checked) {
