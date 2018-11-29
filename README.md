@@ -1,6 +1,7 @@
-# A Simple Temperature Converter
+# Temperature Converter
 
-This is a simple temperature converter app that can convert temperatures from fahrenheit to celsius, and vice versa.
+## Description
+This is a simple temperature converter app where user can convert temperatures from fahrenheit to celsius, and vice versa. This app was coded using entirely vanilla JavaScript, and CSS.
 
 ## Screenshot
 ![main screen shot](./screenshots/converter.png)
@@ -18,7 +19,3 @@ hs -p 9999
 ```
 localhost: 9999
 ```
-* Type a starting temperature in degrees into the input field.
-* Select desired conversion.
-* Click the convert button.
-* Observe the result.
