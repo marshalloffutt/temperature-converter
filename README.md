@@ -7,6 +7,7 @@ This is a simple temperature converter app where user can convert temperatures f
 ![main screen shot](./screenshots/converter.png)
 
 ## How to run this project
+* Clone the repository to your local machine.
 * Use npm to install http-server in your terminal:
 ```sh
 npm install -g http-server
